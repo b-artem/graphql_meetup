@@ -41,6 +41,11 @@ en:
         desc: Movie image type
       poster_type:
         desc: Movie poster type
+      list_type:
+        desc: List type
+        fields:
+          name: List's name
+          items: Lists's movies
       movie_type:
         desc: Movie type
         fields:

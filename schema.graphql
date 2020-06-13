@@ -29,6 +29,26 @@ interface ImageInterface {
 }
 
 """
+List type
+"""
+type ListType implements NodeInterface {
+  """
+  Globally unique identifier
+  """
+  id: ID!
+
+  """
+  Lists's movies
+  """
+  items: [MovieType!]
+
+  """
+  List's name
+  """
+  name: String!
+}
+
+"""
 The connection type for MovieType.
 """
 type MovieConnectionType {
@@ -226,6 +246,11 @@ type PosterType implements ImageInterface {
 }
 
 type Query {
+  """
+  Query to get the list by id
+  """
+  list(id: ID!): ListType!
+
   """
   Get current user
   """
