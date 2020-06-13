@@ -19,7 +19,8 @@ x-backend: &backend
   stdin_open: true
   tty: true
   volumes:
-    - .:/app:cached
+    - .:/var/www/graphql_meetup
+    - /var/www/graphql_meetup/vendor/bundle
     - rails_cache:/app/tmp/cache
     - bundle:/app/vendor/bundle
     - .psqlrc:/root/.psqlrc:ro
