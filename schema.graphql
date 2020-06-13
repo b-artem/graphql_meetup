@@ -285,6 +285,11 @@ type Query {
     """
     last: Int
   ): MovieConnectionType!
+
+  """
+  Query to get the last 3 movies
+  """
+  trendingMovies: [MovieType!]!
 }
 
 """

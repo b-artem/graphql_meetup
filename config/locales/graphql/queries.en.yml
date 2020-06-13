@@ -5,3 +5,4 @@ en:
       me: Get current user
       movies_search: Query to search movies by title
       movie: Query to get the movie by id
+      trending_movies: Query to get the last 3 movies
