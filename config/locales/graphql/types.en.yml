@@ -63,3 +63,7 @@ en:
         fields:
           id: Image id
           filepath: Image file path
+      removed_movie_type:
+        desc: Removed movie
+        fields:
+          removed_movie_id: ID of removed movie
