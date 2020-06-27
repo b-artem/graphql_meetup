@@ -175,6 +175,11 @@ type Mutation {
   refreshToken: RefreshedAccessPayloadType!
 
   """
+  Add movie to a user's list
+  """
+  userAddListItem(input: UserAddListItemInput!): ListType!
+
+  """
   Sign in a user
   """
   userSignIn(input: UserSignInInput!): AuthTokenType!
@@ -341,6 +346,21 @@ type UserAccountType implements Node {
   User account's profile
   """
   userProfile: UserProfileType
+}
+
+"""
+Add movie to a user's list
+"""
+input UserAddListItemInput {
+  """
+  List ID
+  """
+  listId: ID!
+
+  """
+  Movie ID
+  """
+  movieId: ID!
 }
 
 """

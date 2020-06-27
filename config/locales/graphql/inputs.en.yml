@@ -2,6 +2,11 @@ en:
   graphql:
     inputs:
       user:
+        add_list_item:
+          desc: Add movie to a user's list
+          args:
+            list_id: List ID
+            movie_id: Movie ID
         sign_up_input:
           desc: Sign up user via email
           args:

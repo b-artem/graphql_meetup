@@ -7,6 +7,8 @@ en:
           id: ID
           uuid: UUID
       user:
+        add_list_item:
+          desc: Add movie to a user's list
         sign_up:
           desc: Sign up a user
         sign_out:
