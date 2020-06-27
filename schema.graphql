@@ -190,6 +190,11 @@ type Mutation {
   userRemoveListItem(input: UserRemoveListItemInput!): RemovedMovieType!
 
   """
+  Remove a movie from user's Watchlist
+  """
+  userRemoveWatchlistMovie(input: UserRemoveWatchlistMovieInput!): RemovedMovieType!
+
+  """
   Sign in a user
   """
   userSignIn(input: UserSignInInput!): AuthTokenType!
@@ -427,6 +432,16 @@ input UserRemoveListItemInput {
   """
   listId: ID!
 
+  """
+  Movie ID
+  """
+  movieId: ID!
+}
+
+"""
+Remove a movie from user's Watchlist
+"""
+input UserRemoveWatchlistMovieInput {
   """
   Movie ID
   """

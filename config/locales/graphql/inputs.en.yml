@@ -16,6 +16,10 @@ en:
           desc: Remove a movie from user's Favorites list
           args:
             movie_id: Movie ID
+        remove_watchlist_movie:
+          desc: Remove a movie from user's Watchlist
+          args:
+            movie_id: Movie ID
         sign_up_input:
           desc: Sign up user via email
           args:
