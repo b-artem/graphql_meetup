@@ -7,6 +7,11 @@ en:
           args:
             list_id: List ID
             movie_id: Movie ID
+        remove_list_item:
+          desc: Remove a movie from a user's list
+          args:
+            list_id: List ID
+            movie_id: Movie ID
         remove_favorite_movie:
           desc: Remove a movie from user's Favorites list
           args:

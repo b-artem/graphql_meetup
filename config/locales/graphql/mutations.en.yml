@@ -11,6 +11,8 @@ en:
           desc: Add movie to a user's list
         remove_favorite_movie:
           desc: Remove a movie from user's Favorites list
+        remove_list_item:
+          desc: Remove user's list item
         sign_up:
           desc: Sign up a user
         sign_out:

@@ -185,6 +185,11 @@ type Mutation {
   userRemoveFavoriteMovie(input: UserRemoveFavoriteMovieInput!): RemovedMovieType!
 
   """
+  Remove user's list item
+  """
+  userRemoveListItem(input: UserRemoveListItemInput!): RemovedMovieType!
+
+  """
   Sign in a user
   """
   userSignIn(input: UserSignInInput!): AuthTokenType!
@@ -407,6 +412,21 @@ type UserProfileType implements Node {
 Remove a movie from user's Favorites list
 """
 input UserRemoveFavoriteMovieInput {
+  """
+  Movie ID
+  """
+  movieId: ID!
+}
+
+"""
+Remove a movie from a user's list
+"""
+input UserRemoveListItemInput {
+  """
+  List ID
+  """
+  listId: ID!
+
   """
   Movie ID
   """
