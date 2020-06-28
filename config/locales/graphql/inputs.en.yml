@@ -1,6 +1,10 @@
 en:
   graphql:
     inputs:
+      delete_input:
+        desc: Delete entity
+        args:
+          id: Entity ID
       user:
         add_list_item:
           desc: Add movie to a user's list

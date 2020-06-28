@@ -12,6 +12,10 @@ en:
           created_at: Created at
           updated_at: Updated at
           placed_at: Placed at
+      deleted_list_type:
+        desc: Deleted list
+        fields:
+          deleted_list_id: ID of deleted list
       sign_out:
         desc: User sign out
       auth_token:

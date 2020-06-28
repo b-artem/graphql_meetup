@@ -19,6 +19,26 @@ type AuthTokenType {
 }
 
 """
+Delete entity
+"""
+input DeleteInput {
+  """
+  Entity ID
+  """
+  id: ID!
+}
+
+"""
+Deleted list
+"""
+type DeletedListType {
+  """
+  ID of deleted list
+  """
+  deletedListId: ID!
+}
+
+"""
 Interface for images
 """
 interface ImageInterface {
@@ -178,6 +198,11 @@ type Mutation {
   Add movie to a user's list
   """
   userAddListItem(input: UserAddListItemInput!): ListType!
+
+  """
+  Delete user's list
+  """
+  userDeleteList(input: DeleteInput!): DeletedListType!
 
   """
   Remove a movie from user's Favorites list
