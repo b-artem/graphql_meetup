@@ -29,6 +29,7 @@ en:
         fields:
           email: Email of user account
           user_profile: User account's profile
+          lists: Lists of user
       user_profile_type:
         desc: User profile
         fields:

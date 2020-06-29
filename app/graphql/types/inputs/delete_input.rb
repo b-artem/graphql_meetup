@@ -13,7 +13,7 @@ module Types
                ID,
                required: true,
                description: I18n.t("#{I18N_PATH}.args.id"),
-               prepare: ->(list_id, _ctx) { list_id.to_i }
+               prepare: ->(id, _ctx) { id.to_i }
     end
   end
 end

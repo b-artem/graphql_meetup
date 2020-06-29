@@ -11,6 +11,10 @@ en:
           args:
             list_id: List ID
             movie_id: Movie ID
+        create_list:
+          desc: Add a new list
+          args:
+            name: List name
         remove_list_item:
           desc: Remove a movie from a user's list
           args:
