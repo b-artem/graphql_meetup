@@ -27,10 +27,7 @@ module Types
           description: I18n.t("#{I18N_PATH}.fields.poster")
 
     field :removed_movie_id, ID, null: false, description: I18n.t("#{I18N_PATH}.fields.removed_movie_id")
-
-    def removed_movie_id
-      object.id
-    end
+    field :is_watchlist, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_watchlist")
 
     def images
       BatchLoader::GraphQL.for(object.id).batch(default_value: []) do |movie_ids, loader|
@@ -52,6 +49,14 @@ module Types
           loader.call(attachment.record_id, attachment)
         end
       end
+    end
+
+    def removed_movie_id
+      object.id
+    end
+
+    def is_watchlist
+      WatchlistMovie.exists?(movie: object, user_account: context[:current_user])
     end
   end
 end

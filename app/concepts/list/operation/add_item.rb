@@ -3,8 +3,6 @@
 module List::Operation
   class AddItem < Trailblazer::Operation
     step :find_list
-    step Contract::Build(constant: List::Contract::AddItem)
-    step Contract::Validate()
     step :add_item
     step :set_result
 

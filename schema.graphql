@@ -203,6 +203,11 @@ type MovieType implements NodeInterface {
   images: [MovieImageType!]
 
   """
+  Whether movie is in Watchlist or no
+  """
+  isWatchlist: Boolean!
+
+  """
   Original movie original_language
   """
   originalLanguage: String
@@ -253,6 +258,11 @@ type Mutation {
   Add movie to a user's list
   """
   userAddListItem(input: UserAddListItemInput!): ListType!
+
+  """
+  Add movie to user's watchlist
+  """
+  userAddWatchlistMovie(input: UserAddWatchlistMovieInput!): MovieType!
 
   """
   Create user's list
@@ -482,6 +492,16 @@ input UserAddListItemInput {
   """
   listId: ID!
 
+  """
+  Movie ID
+  """
+  movieId: ID!
+}
+
+"""
+Add a movie to user's Watchlist
+"""
+input UserAddWatchlistMovieInput {
   """
   Movie ID
   """

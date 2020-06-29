@@ -61,6 +61,7 @@ en:
           revenue: Movie's revenue
           runtime: Movie's runtime in seconds
           removed_movie_id: ID of removed movie
+          is_watchlist: Whether movie is in Watchlist or no
       image_type:
         desc: Image type
         fields:
