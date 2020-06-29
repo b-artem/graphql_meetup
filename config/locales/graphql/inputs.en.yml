@@ -24,6 +24,10 @@ en:
           desc: Remove a movie from user's Favorites list
           args:
             movie_id: Movie ID
+        add_favorite_movie:
+          desc: Add a movie to user's Favorite list
+          args:
+            movie_id: Movie ID
         add_watchlist_movie:
           desc: Add a movie to user's Watchlist
           args:

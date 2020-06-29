@@ -27,6 +27,7 @@ module Types
           description: I18n.t("#{I18N_PATH}.fields.poster")
 
     field :removed_movie_id, ID, null: false, description: I18n.t("#{I18N_PATH}.fields.removed_movie_id")
+    field :is_favorite, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_favorite")
     field :is_watchlist, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_watchlist")
 
     def images
@@ -53,6 +54,10 @@ module Types
 
     def removed_movie_id
       object.id
+    end
+
+    def is_favorite
+      FavoriteMovie.exists?(movie: object, user_account: context[:current_user])
     end
 
     def is_watchlist

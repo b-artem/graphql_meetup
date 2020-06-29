@@ -203,7 +203,12 @@ type MovieType implements NodeInterface {
   images: [MovieImageType!]
 
   """
-  Whether movie is in Watchlist or no
+  Whether a movie is in Favorite list or no
+  """
+  isFavorite: Boolean!
+
+  """
+  Whether a movie is in Watchlist or no
   """
   isWatchlist: Boolean!
 
@@ -253,6 +258,11 @@ type Mutation {
   Updating current access token with refresh token
   """
   refreshToken: RefreshedAccessPayloadType!
+
+  """
+  Add movie to user's Favorite list
+  """
+  userAddFavoriteMovie(input: UserAddFavoriteMovieInput!): MovieType!
 
   """
   Add movie to a user's list
@@ -481,6 +491,16 @@ type UserAccountType implements Node {
   User account's profile
   """
   userProfile: UserProfileType
+}
+
+"""
+Add a movie to user's Favorite list
+"""
+input UserAddFavoriteMovieInput {
+  """
+  Movie ID
+  """
+  movieId: ID!
 }
 
 """

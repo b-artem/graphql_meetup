@@ -9,6 +9,8 @@ en:
       user:
         add_list_item:
           desc: Add movie to a user's list
+        add_favorite_movie:
+          desc: Add movie to user's Favorite list
         add_watchlist_movie:
           desc: Add movie to user's watchlist
         create_list:
