@@ -29,16 +29,6 @@ input DeleteInput {
 }
 
 """
-Deleted list
-"""
-type DeletedListType {
-  """
-  ID of deleted list
-  """
-  deletedListId: ID!
-}
-
-"""
 Interface for images
 """
 interface ImageInterface {
@@ -107,6 +97,11 @@ type ListEdgeType {
 List type
 """
 type ListType implements NodeInterface {
+  """
+  ID of deleted list
+  """
+  deletedListId: ID!
+
   """
   Globally unique identifier
   """
@@ -228,6 +223,11 @@ type MovieType implements NodeInterface {
   poster: PosterType
 
   """
+  ID of removed movie
+  """
+  removedMovieId: ID!
+
+  """
   Movie's revenue
   """
   revenue: Int
@@ -262,22 +262,22 @@ type Mutation {
   """
   Delete user's list
   """
-  userDeleteList(input: DeleteInput!): DeletedListType!
+  userDeleteList(input: DeleteInput!): ListType!
 
   """
   Remove a movie from user's Favorites list
   """
-  userRemoveFavoriteMovie(input: UserRemoveFavoriteMovieInput!): RemovedMovieType!
+  userRemoveFavoriteMovie(input: UserRemoveFavoriteMovieInput!): MovieType!
 
   """
   Remove user's list item
   """
-  userRemoveListItem(input: UserRemoveListItemInput!): RemovedMovieType!
+  userRemoveListItem(input: UserRemoveListItemInput!): MovieType!
 
   """
   Remove a movie from user's Watchlist
   """
-  userRemoveWatchlistMovie(input: UserRemoveWatchlistMovieInput!): RemovedMovieType!
+  userRemoveWatchlistMovie(input: UserRemoveWatchlistMovieInput!): MovieType!
 
   """
   Sign in a user
@@ -416,16 +416,6 @@ type RefreshedAccessPayloadType {
   Token for signed cookies
   """
   csrf: String!
-}
-
-"""
-Removed movie
-"""
-type RemovedMovieType {
-  """
-  ID of removed movie
-  """
-  removedMovieId: ID!
 }
 
 """

@@ -3,7 +3,7 @@
 module Mutations
   module User
     class DeleteList < AuthBaseMutation
-      type Types::DeletedListType
+      type Types::ListType
 
       description I18n.t('graphql.mutations.user.delete_list.desc')
 

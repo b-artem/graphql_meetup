@@ -15,6 +15,8 @@ module Types
           null: true,
           description: I18n.t("#{I18N_PATH}.fields.items")
 
+    field :deleted_list_id, ID, null: false, description: I18n.t("#{I18N_PATH}.fields.deleted_list_id")
+
     def items
       BatchLoader::GraphQL.for(object.id).batch(default_value: []) do |list_ids, loader|
         ::Movie
@@ -24,6 +26,10 @@ module Types
             loader.call(movie.list_ids) { |memo| memo << movie }
           end
       end
+    end
+
+    def deleted_list_id
+      object.id
     end
   end
 end

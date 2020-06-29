@@ -10,7 +10,7 @@ module FavoriteMovie::Operation
     end
 
     def remove_favorite_movie(ctx, model:, **)
-      ctx['result'] = { removed_movie_id: model.movie_id } if model.destroy
+      ctx['result'] = model.destroy
     end
   end
 end

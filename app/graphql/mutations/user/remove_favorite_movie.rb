@@ -3,7 +3,7 @@
 module Mutations
   module User
     class RemoveFavoriteMovie < AuthBaseMutation
-      type Types::RemovedMovieType
+      type Types::MovieType
 
       description I18n.t('graphql.mutations.user.remove_favorite_movie.desc')
 

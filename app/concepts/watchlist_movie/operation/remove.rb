@@ -10,7 +10,8 @@ module WatchlistMovie::Operation
     end
 
     def remove_watchlist_movie(ctx, model:, **)
-      ctx['result'] = { removed_movie_id: model.movie_id } if model.destroy
+      model.destroy
+      ctx['result'] = model.movie
     end
   end
 end

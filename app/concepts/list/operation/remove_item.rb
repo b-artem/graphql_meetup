@@ -15,7 +15,8 @@ module List::Operation
     end
 
     def remove_item(ctx, item:, **)
-      ctx['result'] = { removed_movie_id: item.movie_id } if item.destroy
+      item.destroy
+      ctx['result'] = item.movie
     end
   end
 end

@@ -26,6 +26,12 @@ module Types
           null: true,
           description: I18n.t("#{I18N_PATH}.fields.poster")
 
+    field :removed_movie_id, ID, null: false, description: I18n.t("#{I18N_PATH}.fields.removed_movie_id")
+
+    def removed_movie_id
+      object.id
+    end
+
     def images
       BatchLoader::GraphQL.for(object.id).batch(default_value: []) do |movie_ids, loader|
         ::MovieImage

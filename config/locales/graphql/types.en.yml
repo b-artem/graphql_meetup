@@ -12,10 +12,6 @@ en:
           created_at: Created at
           updated_at: Updated at
           placed_at: Placed at
-      deleted_list_type:
-        desc: Deleted list
-        fields:
-          deleted_list_id: ID of deleted list
       sign_out:
         desc: User sign out
       auth_token:
@@ -51,6 +47,7 @@ en:
         fields:
           name: List's name
           items: Lists's movies
+          deleted_list_id: ID of deleted list
       movie_type:
         desc: Movie type
         fields:
@@ -63,12 +60,9 @@ en:
           poster: Movie's poster image
           revenue: Movie's revenue
           runtime: Movie's runtime in seconds
+          removed_movie_id: ID of removed movie
       image_type:
         desc: Image type
         fields:
           id: Image id
           filepath: Image file path
-      removed_movie_type:
-        desc: Removed movie
-        fields:
-          removed_movie_id: ID of removed movie

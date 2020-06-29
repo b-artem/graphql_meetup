@@ -10,7 +10,7 @@ module List::Operation
     end
 
     def delete_list(ctx, model:, **)
-      ctx['result'] = { deleted_list_id: model.id } if model.destroy
+      ctx['result'] = model.destroy
     end
   end
 end

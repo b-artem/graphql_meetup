@@ -3,7 +3,7 @@
 module Mutations
   module User
     class RemoveListItem < AuthBaseMutation
-      type Types::RemovedMovieType
+      type Types::MovieType
 
       description I18n.t('graphql.mutations.user.remove_list_item.desc')
 
