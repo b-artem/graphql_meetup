@@ -12,24 +12,15 @@ module Types
 
     field :items,
           [Types::MovieType],
-          null: true,
+          null: false,
           description: I18n.t("#{I18N_PATH}.fields.items")
-
-    field :deleted_list_id, ID, null: false, description: I18n.t("#{I18N_PATH}.fields.deleted_list_id")
 
     def items
       BatchLoader::GraphQL.for(object.id).batch(default_value: []) do |list_ids, loader|
-        ::Movie
-          .joins(:lists_movies)
-          .where(lists_movies: { list_id: list_ids })
-          .each do |movie|
-            loader.call(movie.list_ids) { |memo| memo << movie }
-          end
+        ListsMovie.includes(:movie).where(list_id: list_ids).each do |list_movie|
+          loader.call(list_movie.list_id) { |memo| memo << list_movie.movie }
+        end
       end
-    end
-
-    def deleted_list_id
-      object.id
     end
   end
 end

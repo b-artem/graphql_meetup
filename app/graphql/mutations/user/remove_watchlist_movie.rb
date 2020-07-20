@@ -3,7 +3,7 @@
 module Mutations
   module User
     class RemoveWatchlistMovie < AuthBaseMutation
-      type Types::MovieType
+      type Types::RemoveMovieType
 
       description I18n.t('graphql.mutations.user.remove_watchlist_movie.desc')
 

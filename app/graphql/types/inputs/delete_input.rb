@@ -12,8 +12,7 @@ module Types
       argument :id,
                ID,
                required: true,
-               description: I18n.t("#{I18N_PATH}.args.id"),
-               prepare: ->(id, _ctx) { id.to_i }
+               description: I18n.t("#{I18N_PATH}.args.id")
     end
   end
 end

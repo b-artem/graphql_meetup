@@ -18,7 +18,7 @@ module Types
 
     field :images,
           [Types::MovieImageType],
-          null: true,
+          null: false,
           description: I18n.t("#{I18N_PATH}.fields.images")
 
     field :poster,
@@ -26,7 +26,6 @@ module Types
           null: true,
           description: I18n.t("#{I18N_PATH}.fields.poster")
 
-    field :removed_movie_id, ID, null: false, description: I18n.t("#{I18N_PATH}.fields.removed_movie_id")
     field :is_favorite, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_favorite")
     field :is_watchlist, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_watchlist")
 
@@ -50,10 +49,6 @@ module Types
           loader.call(attachment.record_id, attachment)
         end
       end
-    end
-
-    def removed_movie_id
-      object.id
     end
 
     def is_favorite

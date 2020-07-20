@@ -12,8 +12,7 @@ module Types
       argument :movie_id,
                ID,
                required: true,
-               description: I18n.t("#{I18N_PATH}.args.movie_id"),
-               prepare: ->(movie_id, _ctx) { movie_id.to_i }
+               description: I18n.t("#{I18N_PATH}.args.movie_id")
     end
   end
 end

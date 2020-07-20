@@ -2,11 +2,11 @@
 
 module List::Operation
   class AddItem < Trailblazer::Operation
-    step :find_list
+    step :model, fail_fast: true
     step :add_item
     step :set_result
 
-    def find_list(ctx, current_user:, params:, **)
+    def model(ctx, current_user:, params:, **)
       ctx['model'] = current_user.lists.find_by(id: params[:list_id])
     end
 

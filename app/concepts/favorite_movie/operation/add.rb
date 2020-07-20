@@ -2,10 +2,10 @@
 
 module FavoriteMovie::Operation
   class Add < Trailblazer::Operation
-    step :find_movie
+    step :model, fail_fast: true
     step :add_favorite_movie
 
-    def find_movie(ctx, params:, **)
+    def model(ctx, params:, **)
       ctx['movie'] = Movie.find_by(id: params[:movie_id])
     end
 
