@@ -12,6 +12,10 @@ en:
           created_at: Created at
           updated_at: Updated at
           placed_at: Placed at
+      delete_list_type:
+        desc: Deleted list
+        fields:
+          deleted_list_id: ID of deleted list
       sign_out:
         desc: User sign out
       auth_token:
@@ -25,6 +29,7 @@ en:
         fields:
           email: Email of user account
           user_profile: User account's profile
+          lists: Lists of user
       user_profile_type:
         desc: User profile
         fields:
@@ -41,6 +46,11 @@ en:
         desc: Movie image type
       poster_type:
         desc: Movie poster type
+      list_type:
+        desc: List type
+        fields:
+          name: List's name
+          items: Lists's movies
       movie_type:
         desc: Movie type
         fields:
@@ -53,8 +63,14 @@ en:
           poster: Movie's poster image
           revenue: Movie's revenue
           runtime: Movie's runtime in seconds
+          is_favorite: Whether a movie is in Favorite list or no
+          is_watchlist: Whether a movie is in Watchlist or no
       image_type:
         desc: Image type
         fields:
           id: Image id
           filepath: Image file path
+      remove_movie_type:
+        desc: Removed movie
+        fields:
+          removed_movie_id: ID of removed movie

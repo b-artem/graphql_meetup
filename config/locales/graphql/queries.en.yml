@@ -1,6 +1,8 @@
 en:
   graphql:
     queries:
+      list: Query to get the list by id
       me: Get current user
       movies_search: Query to search movies by title
       movie: Query to get the movie by id
+      trending_movies: Query to get the last 3 movies

@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-module Movie::Operation
+module List::Operation
   class Index < Trailblazer::Operation
     step :set_result
 
-    def set_result(ctx, **)
-      ctx['result'] = ::Movie.all
+    def set_result(ctx, current_user:, **)
+      ctx['result'] = current_user.lists
     end
   end
 end

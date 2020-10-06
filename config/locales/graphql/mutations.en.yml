@@ -7,6 +7,22 @@ en:
           id: ID
           uuid: UUID
       user:
+        add_list_item:
+          desc: Add movie to a user's list
+        add_favorite_movie:
+          desc: Add movie to user's Favorite list
+        add_watchlist_movie:
+          desc: Add movie to user's watchlist
+        create_list:
+          desc: Create user's list
+        delete_list:
+          desc: Delete user's list
+        remove_favorite_movie:
+          desc: Remove a movie from user's Favorites list
+        remove_watchlist_movie:
+          desc: Remove a movie from user's Watchlist
+        remove_list_item:
+          desc: Remove user's list item
         sign_up:
           desc: Sign up a user
         sign_out:

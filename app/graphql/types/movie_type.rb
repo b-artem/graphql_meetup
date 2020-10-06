@@ -18,13 +18,16 @@ module Types
 
     field :images,
           [Types::MovieImageType],
-          null: true,
+          null: false,
           description: I18n.t("#{I18N_PATH}.fields.images")
 
     field :poster,
           Types::PosterType,
           null: true,
           description: I18n.t("#{I18N_PATH}.fields.poster")
+
+    field :is_favorite, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_favorite")
+    field :is_watchlist, Boolean, null: false, description: I18n.t("#{I18N_PATH}.fields.is_watchlist")
 
     def images
       BatchLoader::GraphQL.for(object.id).batch(default_value: []) do |movie_ids, loader|
@@ -46,6 +49,14 @@ module Types
           loader.call(attachment.record_id, attachment)
         end
       end
+    end
+
+    def is_favorite
+      FavoriteMovie.exists?(movie: object, user_account: context[:current_user])
+    end
+
+    def is_watchlist
+      WatchlistMovie.exists?(movie: object, user_account: context[:current_user])
     end
   end
 end
